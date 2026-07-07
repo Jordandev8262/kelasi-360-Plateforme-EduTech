@@ -1,386 +1,1139 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="fr-CA" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Document Title -->
+  <title>Kelasi 360</title>
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Kelasi 360</title>
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/gallery/logo.png">
 
+  <!-- Google Fonts - Sora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/gallery/logo.png">
+  <!-- Stylesheets -->
+  <link href="assets/css/theme.css" rel="stylesheet">
+  
+  <style>
+    /* Custom styles for OpenAI-inspired design */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: "Sora", "sans-serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background-color: #070E27;
+      color: #EBEBED;
+      line-height: 1.6;
+    }
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="stylesheet" href="assets/img/gallery/logo.png">
-    <link href="assets/css/theme.css" rel="stylesheet" />
+    h1, h2, h3, h4, h5, h6, .hero-title, .section-title, .feature-title, .step-title, .pricing-price, .cta-title {
+      font-family: "Sora", "sans-serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
 
-    <link href="assets/img/gallery/logo.png" rel="stylesheet">
-  </head>
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
+    a:hover {
+      color: #0059F7;
+    }
 
-  <body>
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(7, 14, 39, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(235, 235, 237, 0.1);
+    }
 
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-      <nav class="navbar navbar-light sticky-top" data-navbar-darken-on-scroll="900">
-        <div class="container pt-2"><a class="navbar-brand" href="index.html"> <img src="assets/img/gallery/logo.png" alt="..." /></a>
-          <div class="navbar-nav ms-auto">
-            <button class="btn btn-secondary">Se Connecter</button>
+    .navbar-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-link {
+      color: #7E8BB6;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #EBEBED;
+    }
+
+    .search-icon {
+      color: #7E8BB6;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      padding: 0.5rem;
+    }
+
+    .search-icon:hover {
+      color: #EBEBED;
+    }
+
+    .btn-connect {
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-connect:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 89, 247, 0.3);
+      color: white;
+    }
+
+    /* Chat Section */
+    .chat-section {
+      padding: 4rem 2rem 6rem;
+    }
+
+    .chat-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .chat-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .chat-messages {
+      background: rgba(25, 36, 71, 0.3);
+      border: 1px solid rgba(126, 139, 182, 0.2);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      min-height: 300px;
+      max-height: 500px;
+      overflow-y: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .chat-message {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .chat-message.user {
+      justify-content: flex-end;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-avatar.user {
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
+    }
+
+    .chat-avatar.ai {
+      background: linear-gradient(135deg, #10a37f 0%, #0d8b6a 100%);
+    }
+
+    .chat-bubble {
+      max-width: 80%;
+      padding: 1rem 1.5rem;
+      border-radius: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .chat-bubble.user {
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
+      color: white;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .chat-bubble.ai {
+      background: rgba(126, 139, 182, 0.15);
+      color: #EBEBED;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-typing {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .chat-typing-dot {
+      width: 8px;
+      height: 8px;
+      background: #7E8BB6;
+      border-radius: 50%;
+      animation: typing 1.4s infinite ease-in-out both;
+    }
+
+    .chat-typing-dot:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .chat-typing-dot:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes typing {
+      0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+      }
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .chat-input-container {
+      display: flex;
+      align-items: center;
+      background: rgba(25, 36, 71, 0.5);
+      border: 1px solid rgba(126, 139, 182, 0.3);
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .chat-input-container:focus-within {
+      border-color: rgba(0, 89, 247, 0.5);
+      box-shadow: 0 0 30px rgba(0, 89, 247, 0.2);
+    }
+
+    .chat-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #EBEBED;
+      font-size: 1.1rem;
+      outline: none;
+    }
+
+    .chat-input::placeholder {
+      color: #7E8BB6;
+    }
+
+    .chat-send-button {
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
+      border: none;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .chat-send-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 89, 247, 0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+      color: #0059F7;
+    }
+
+    .hero-subtitle {
+      font-size: 1.35rem;
+      color: #7E8BB6;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 89, 247, 0.4);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(126, 139, 182, 0.3);
+      color: #EBEBED;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(235, 235, 237, 0.05);
+      border-color: rgba(126, 139, 182, 0.5);
+      color: #EBEBED;
+    }
+
+    /* Dashboard Preview */
+    .dashboard-preview {
+      padding: 3rem 2rem 6rem;
+    }
+
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dashboard-image {
+      width: 100%;
+      border-radius: 1rem;
+      border: 1px solid rgba(126, 139, 182, 0.15);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 6rem 2rem;
+    }
+
+    .features-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #7E8BB6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(25, 36, 71, 0.5);
+      border: 1px solid rgba(126, 139, 182, 0.15);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 89, 247, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-description {
+      color: #7E8BB6;
+      line-height: 1.7;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
+    }
+
+    .how-it-works-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .step:nth-child(even) {
+      direction: rtl;
+    }
+
+    .step:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .step-content {
+      padding: 2rem 0;
+    }
+
+    .step-number {
+      color: #0059F7;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .step-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .step-description {
+      color: #7E8BB6;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .step-image {
+      width: 100%;
+      border-radius: 0.75rem;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
+    }
+
+    .pricing-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .pricing-card {
+      background: rgba(25, 36, 71, 0.5);
+      border: 1px solid rgba(126, 139, 182, 0.15);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(0, 89, 247, 0.5);
+      box-shadow: 0 0 40px rgba(0, 89, 247, 0.15);
+      position: relative;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      right: 2rem;
+      background: #0059F7;
+      color: white;
+      padding: 0.35rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .pricing-name {
+      font-size: 1.1rem;
+      color: #7E8BB6;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-price {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price span {
+      font-size: 1rem;
+      color: #7E8BB6;
+      font-weight: 400;
+    }
+
+    .pricing-divider {
+      height: 1px;
+      background: rgba(126, 139, 182, 0.15);
+      margin: 1.5rem 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .pricing-feature {
+      padding: 0.75rem 0;
+      color: #7E8BB6;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pricing-feature i {
+      color: #0059F7;
+    }
+
+    .pricing-cta {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .pricing-cta.primary {
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
+      color: white;
+    }
+
+    .pricing-cta.primary:hover {
+      box-shadow: 0 10px 30px rgba(0, 89, 247, 0.3);
+      color: white;
+    }
+
+    .pricing-cta.secondary {
+      border: 1px solid rgba(126, 139, 182, 0.3);
+      color: #EBEBED;
+    }
+
+    .pricing-cta.secondary:hover {
+      background: rgba(235, 235, 237, 0.05);
+      color: #EBEBED;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(0, 89, 247, 0.15) 0%, rgba(0, 89, 247, 0.05) 100%);
+      border: 1px solid rgba(0, 89, 247, 0.3);
+      border-radius: 1.5rem;
+      padding: 4rem;
+    }
+
+    .cta-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cta-subtitle {
+      color: #7E8BB6;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 4rem 2rem 3rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(126, 139, 182, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      background: rgba(0, 89, 247, 0.2);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #7E8BB6;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a:hover {
+      color: #EBEBED;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .navbar-links {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 968px) {
+      .navbar-links .nav-link {
+        display: none;
+      }
+      
+      .navbar-links {
+        gap: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .step:nth-child(even) {
+        direction: ltr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .chat-title {
+        font-size: 1.5rem;
+      }
+
+      .chat-messages {
+        padding: 1.5rem;
+      }
+
+      .chat-bubble {
+        max-width: 90%;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top, .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="navbar-logo">
+        <img src="assets/img/gallery/logo.png" alt="Kelasi 360" style="width: 40px; margin-right: 12px;">
+        Kelasi 360
+      </a>
+      <div class="navbar-links">
+        <a href="#features" class="nav-link">Fonctionnalités</a>
+        <a href="#how-it-works" class="nav-link">Comment ça marche</a>
+        <a href="#pricing" class="nav-link">Tarifs</a>
+        <a href="#" class="nav-link">Développeurs</a>
+        <a href="#" class="nav-link">Entreprise</a>
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <a href="#" class="btn-connect">Se Connecter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1 class="hero-title">
+        Kelasi <span>360</span> :<br>
+        L'éducation connectée et intelligente
+      </h1>
+      <p class="hero-subtitle">
+        Kelasi 360 améliore les conditions de suivi et de gestion de l'éducation grâce au numérique, en connectant les apprenants, les enseignants et les établissements dans un écosystème intelligent, inclusif et innovant.
+      </p>
+      <div class="hero-cta">
+        <a href="#" class="btn-primary">Découvrir la plateforme</a>
+        <a href="#how-it-works" class="btn-secondary">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Section -->
+  <section class="chat-section">
+    <div class="chat-container">
+      <h2 class="chat-title">Comment puis-je vous aider ?</h2>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message ai">
+          <div class="chat-avatar ai">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="chat-bubble ai">
+            Bonjour ! Je suis l'assistant Kelasi 360. Posez-moi n'importe quelle question sur notre plateforme éducative, ses fonctionnalités, tarifs, ou comment elle peut vous aider !
           </div>
         </div>
-      </nav>
+      </div>
+      <div class="chat-input-container">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Posez une question sur Kelasi 360...">
+        <button class="chat-send-button" id="chatSend">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </section>
 
+  <!-- Dashboard Preview -->
+  <section class="dashboard-preview">
+    <div class="dashboard-container">
+      <img src="assets/img/gallery/dashboard.png" alt="Tableau de bord Kelasi 360" class="dashboard-image">
+    </div>
+  </section>
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="mt-6">
-
-        <div class="container">
-          <div class="row align-items-center" style="margin-top: -70px;"> 
-            <div class="col-md-9 col-lg-8 col-xl-5">
-              <h1 class="display-3 lh-sm">Kelasi <span style="color:#0059F7;">360 : </span>  l’éducation connectée et intelligente</h1>
-            </div>
-            <div class="col-md-9 col-xl-5">
-              <p class="fs-2">Kelasi 360 améliore les conditions de suivi et de gestion de l'éducation grâce au numérique,
-              en connectant les apprenants, les enseignants et les établissements dans un écosystème intelligent,
-              inclusif et innovant.</p>
-              <button class="btn btn-primary mt-3">Découvrir la plateforme</button>
-            </div>
-          </div>
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="features-container">
+      <div class="section-header">
+        <h2 class="section-title">Fonctionnalités puissantes</h2>
+        <p class="section-subtitle">Tout ce dont vous avez besoin pour gérer votre établissement</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="assets/img/gallery/dashboardicon.png" alt="Tableau de bord" class="feature-icon">
+          <h3 class="feature-title">Tableau de bord</h3>
+          <p class="feature-description">Suivi en temps réel des performances de votre établissement avec des indicateurs clairs et précis.</p>
         </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container"><img class="img-fluid" src="assets/img/gallery/dashboard.png" alt="Dashboard" />
+        <div class="feature-card">
+          <img src="assets/img/gallery/comment.png" alt="Frais scolaire" class="feature-icon">
+          <h3 class="feature-title">Gestion des frais</h3>
+          <p class="feature-description">Simplifiez la gestion financière avec un système de paiement et de suivi complet.</p>
         </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container">
-          <div class="row mx-md-5 px-md-5 d-flex justify-content-evenly">
-            <div class="col-4 col-lg-auto mt-5 mt-lg-0"><img src="assets/img/gallery/brands/google.png" alt="Google" style="height:30px;" /></div>
-            <div class="col-4 col-lg-auto mt-5 mt-lg-0"><img src="assets/img/gallery/brands/slack.png" alt="Slack" style="height:30px;" /></div>
-            <div class="col-4 col-lg-auto mt-5 mt-lg-0"><img src="assets/img/gallery/brands/amazon.png" alt="Amazon" style="height:30px;" /></div>
-            <div class="col-4 col-lg-auto mt-5 mt-lg-0"><img src="assets/img/gallery/brands/zoom.png" alt="Zoom" style="height:30px;" /></div>
-            <div class="col-4 col-lg-auto mt-5 mt-lg-0"><img src="assets/img/gallery/brands/netflix.png" alt="Netflix" style="height:30px;" /></div>
-          </div>
-          <div class="px-xl-8 px-md-7">
-            <hr class="mt-7 text-1000" />
-          </div>
+        <div class="feature-card">
+          <img src="assets/img/gallery/trilored.png" alt="Communiqués" class="feature-icon">
+          <h3 class="feature-title">Communiqués</h3>
+          <p class="feature-description">Communiquez efficacement avec les parents, les enseignants et les étudiants.</p>
         </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container">
-          <h1 class="display-6 fw-semi-bold"> Fonctionnalités </h1>
-          <p class="fs-2">Our landing page template works on all devices, so you only have to set.</p>
-          <div class="row mb-4 mt-6">
-            <div class="col-md-6">
-              <div class="border rounded-1 border-700 h-100 features-items">
-                <div class="p-5"><img src="assets/img/gallery/dashboardicon.png" alt="Dashboard" style="width:48px;height:48px;" />
-                  <h3 class="pt-3 lh-base">Tableau de Bord</h3>
-                  <p class="mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="border rounded-1 border-700 h-100 features-items">
-                <div class="p-5"><img src="assets/img/gallery/comment.png" alt="Comment" style="width:48px;height:48px;" />
-                  <h3 class="pt-3 lh-base">Frais Scolaire</h3>
-                  <p class="mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <div class="border rounded-1 border-700 h-100 features-items">
-                <div class="p-5"><img src="assets/img/gallery/trilored.png" alt="Tailored" style="width:48px;height:48px;" />
-                  <h3 class="pt-3 lh-base">Communiqués</h3>
-                  <p class="mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="border rounded-1 border-700 h-100 features-items">
-                <div class="p-5"><img src="assets/img/gallery/statistics.png" alt="Statistic" style="width:48px;height:48px;" />
-                  <h3 class="pt-3 lh-base">Classes</h3>
-                  <p class="mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="border rounded-1 border-700 h-100 features-items">
-                <div class="p-5"><img src="assets/img/gallery/profile.png" alt="Profiles" style="width:48px;height:48px;" />
-                  <h3 class="pt-3 lh-base">Professeurs</h3>
-                  <p class="mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="border rounded-1 border-700 h-100 features-items">
-                <div class="p-5"><img src="assets/img/gallery/folder.png" alt="Folders" style="width:48px;height:48px;" />
-                  <h3 class="pt-3 lh-base">Trésories</h3>
-                  <p class="mb-0">A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="feature-card">
+          <img src="assets/img/gallery/statistics.png" alt="Classes" class="feature-icon">
+          <h3 class="feature-title">Gestion des classes</h3>
+          <p class="feature-description">Organisez vos classes, affectez les enseignants et gérez les inscriptions facilement.</p>
         </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="mt-5">
-
-        <div class="container">
-          <div class="text-center">
-            <div class="p-5 bg-primary rounded-3">
-              <div class="py-3">
-                <h4 class="opacity-50 ls-2 lh-base fw-medium">PRÊT À COMMENCER</h4>
-                <h2 class="mt-3 fs-4 fs-sm-7 latter-sp-3 lh-base fw-semi-bold">Abonnez-vous dès maintenant</h2>
-              </div>
-              <div class="flex-center d-flex">
-                <button class="btn btn-info">Commencer <span class="fas fa-arrow-right"></span></button>
-              </div>
-            </div>
-          </div>
+        <div class="feature-card">
+          <img src="assets/img/gallery/profile.png" alt="Professeurs" class="feature-icon">
+          <h3 class="feature-title">Professeurs</h3>
+          <p class="feature-description">Gérez les professeurs, leurs emplois du temps et leurs évaluations.</p>
         </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="mt-5">
-
-        <div class="container">
-          <div class="text-center">
-            <h1 class="display-6 fw-semi-bold">Comment ça Marche ?</h1>
-          </div>
-          <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
-            <div class="col-md-7 col-lg-6 order-md-1"><img class="w-100" src="assets/img/gallery/comment1.png" alt="..." /></div>
-            <div class="col-md-5 col-lg-4">
-              <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Administrateur ?</h3>
-              <p class="fs-xl-1 ls-3 pe-xl-2"> Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.</p>
-            </div>
-          </div>
-          <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
-            <div class="col-md-7 col-lg-6 false"><img class="w-100" src="assets/img/gallery/comment2.png" alt="..." /></div>
-            <div class="col-md-5 col-lg-4">
-              <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Abonnement ?</h3>
-              <p class="fs-xl-1 ls-3 pe-xl-2"> Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.</p>
-            </div>
-          </div>
-          <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
-            <div class="col-md-7 col-lg-6 order-md-1"><img class="w-100" src="assets/img/gallery/comment3.png" alt="..." /></div>
-            <div class="col-md-5 col-lg-4">
-              <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Comment S'abonner ?</h3>
-              <p class="fs-xl-1 ls-3 pe-xl-2"> Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.</p>
-            </div>
-          </div>
+        <div class="feature-card">
+          <img src="assets/img/gallery/folder.png" alt="Trésorerie" class="feature-icon">
+          <h3 class="feature-title">Trésorerie</h3>
+          <p class="feature-description">Suivi complet des finances avec rapports détaillés et analyses.</p>
         </div>
-        <!-- end of .container-->
+      </div>
+    </div>
+  </section>
 
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-it-works-container">
+      <div class="section-header">
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <p class="section-subtitle">Trois étapes simples pour transformer votre établissement</p>
+      </div>
 
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container-lg">
-          <div class="text-center"> 
-            <h1 class="display-6 fw-semi-bold">Tarification</h1>
-          </div>
-          <div class="row flex-center">
-            <div class="col-sm-9 col-md-4 mt-3">
-              <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
-                <p class="fs-2 ls-2">STANDARD</p>
-                <h1 class="display-4 ls-3"><span class="text-600">$</span>70</h1>
-                <hr class="hr mt-6 text-1000" />
-                <ul class="mt-5 ps-0">
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>7,000,000+ Events</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>4 Custom Domains</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Dedicated Support </li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>12 Months History</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>1 Dedicated SSL</li>
-                </ul>
-                <button class="btn btn-gray mt-4">Commencer <span class="fas fa-arrow-right"></span></button>
-              </div>
-            </div>
-            <div class="col-sm-9 col-md-4 mt-3">
-              <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-0">
-                <p class="fs-2 ls-2">BASIC</p>
-                <h1 class="display-4 ls-3"><span class="text-600">$</span>100</h1>
-                <hr class="hr mt-6 text-1000" />
-                <ul class="mt-5 ps-0">
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>7,000,000+ Events</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>4 Custom Domains</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Dedicated Support </li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>12 Months History</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>1 Dedicated SSL</li>
-                </ul>
-                <button class="btn btn-gray mt-4">Commencer <span class="fas fa-arrow-right"></span></button>
-              </div>
-            </div>
-            <div class="col-sm-9 col-md-4 mt-3">
-              <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
-                <p class="fs-2 ls-2">PREMIUM</p>
-                <h1 class="display-4 ls-3"><span class="text-600">$</span>150</h1>
-                <hr class="hr mt-6 text-1000" />
-                <ul class="mt-5 ps-0">
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>7,000,000+ Events</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>4 Custom Domains</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Dedicated Support </li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>12 Months History</li>
-                  <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>1 Dedicated SSL</li>
-                </ul>
-                <button class="btn btn-gray mt-4">Commencer <span class="fas fa-arrow-right"></span></button>
-              </div>
-            </div>
-          </div>
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">Étape 1</div>
+          <h3 class="step-title">Pour l'administrateur</h3>
+          <p class="step-description">Configurez votre établissement en quelques minutes. Ajoutez vos classes, vos professeurs et vos étudiants facilement.</p>
         </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container">
-          <div class="text-center text-xl-start">
-            <div class="p-5 bg-primary rounded-3 d-flex flex-column justify-content-xl-between flex-xl-row">
-              <div class="py-3">
-                <h4 class="opacity-50 ls-2 lh-base fw-medium">PRÊT À COMMENCER</h4>
-                <h2 class="mt-3 fs-4 fs-sm-7 latter-sp-3 lh-base fw-semi-bold">Abonnez-vous</h2>
-              </div>
-              <div class="flex-center d-flex">
-                <button class="btn btn-info">Commencer <span class="fas fa-arrow-right"></span></button>
-              </div>
-            </div>
-          </div>
+        <div class="step-image-container">
+          <img src="assets/img/gallery/comment1.png" alt="Administrateur" class="step-image">
         </div>
-        <!-- end of .container-->
+      </div>
 
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="bg-secondary">
-
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-3 text-center text-xl-start"><a href="#!"><img class="footer-img me-xl-5 me-3" src="assets/img/gallery/facebook-line1.svg" alt="fb" style="width:20px;height:20px;" /></a><a href="#!"><img class="footer-img me-xl-5 me-3" src="assets/img/gallery/linkedin-line1.svg" alt="in" style="width:20px;height:20px;" /></a><a href="#!"><img class="footer-img me-xl-5 me-3" src="assets/img/gallery/twitter-line1.svg" alt="twitter" style="width:20px;height:20px;" /></a><a href="#!"><img class="footer-img me-xl-5 me-3" src="assets/img/gallery/instagram-line1.svg" alt="instragram" style="width:20px;height:20px;" /></a>
-            </div>
-            <div class="col-xl-4 pt-2 pt-xl-0">
-              <p class="mb-0 text-center text-xl-end"><a class="text-300 text-decoration-none footer-link" href="#!"> Terms &amp; conditon </a><a class="text-300 text-decoration-none footer-link ps-4" href="#!">Privacy Policy </a>
-              </p>
-            </div>
-            <div class="col-xl-5 pt-2 pt-xl-0 text-center text-xl-end">
-              <p class="mb-0">&copy; by <a class="text-300" href="https://www.Digicreateam.com/" target="_blank"> DigiCreamTeam</a></p>
-            </div>
-          </div>
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">Étape 2</div>
+          <h3 class="step-title">Abonnement et accès</h3>
+          <p class="step-description">Choisissez le plan qui correspond à vos besoins et donnez accès à toute votre équipe.</p>
         </div>
-        <!-- end of .container-->
+        <div class="step-image-container">
+          <img src="assets/img/gallery/comment2.png" alt="Abonnement" class="step-image">
+        </div>
+      </div>
 
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">Étape 3</div>
+          <h3 class="step-title">Commencez à utiliser</h3>
+          <p class="step-description">Profitez de toutes les fonctionnalités pour gérer votre établissement efficacement au quotidien.</p>
+        </div>
+        <div class="step-image-container">
+          <img src="assets/img/gallery/comment3.png" alt="Utilisation" class="step-image">
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-container">
+      <div class="section-header">
+        <h2 class="section-title">Tarification simple et transparente</h2>
+        <p class="section-subtitle">Choisissez le plan adapté à votre établissement</p>
+      </div>
 
-    </main>
-    <!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="pricing-name">Standard</h3>
+          <div class="pricing-price">$70<span>/mois</span></div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Jusqu'à 500 étudiants</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Gestion des classes</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Support par email</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Rapports de base</li>
+          </ul>
+          <a href="#" class="pricing-cta secondary">Commencer</a>
+        </div>
 
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Populaire</div>
+          <h3 class="pricing-name">Pro</h3>
+          <div class="pricing-price">$100<span>/mois</span></div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Jusqu'à 1500 étudiants</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Toutes les fonctionnalités</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Support prioritaire</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Rapports avancés</li>
+          </ul>
+          <a href="#" class="pricing-cta primary">Commencer</a>
+        </div>
 
+        <div class="pricing-card">
+          <h3 class="pricing-name">Entreprise</h3>
+          <div class="pricing-price">$150<span>/mois</span></div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Étudiants illimités</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Personnalisation complète</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Support dédié</li>
+            <li class="pricing-feature"><i class="fas fa-check-circle"></i> API accessible</li>
+          </ul>
+          <a href="#" class="pricing-cta secondary">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Prêt à commencer ?</h2>
+      <p class="cta-subtitle">Rejoignez des centaines d'établissements qui utilisent déjà Kelasi 360</p>
+      <a href="#" class="btn-primary">Essayer gratuitement</a>
+    </div>
+  </section>
 
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="vendors/swiper/swiper-bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <script src="assets/js/theme.js"></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-logo">Kelasi 360</div>
+        <div class="footer-social">
+          <a href="#"><img src="assets/img/gallery/facebook-line1.svg" alt="Facebook" style="width: 20px; height: 20px;"></a>
+          <a href="#"><img src="assets/img/gallery/linkedin-line1.svg" alt="LinkedIn" style="width: 20px; height: 20px;"></a>
+          <a href="#"><img src="assets/img/gallery/twitter-line1.svg" alt="Twitter" style="width: 20px; height: 20px;"></a>
+          <a href="#"><img src="assets/img/gallery/instagram-line1.svg" alt="Instagram" style="width: 20px; height: 20px;"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Kelasi 360. Tous droits réservés.</p>
+        <div class="footer-links">
+          <a href="#">Conditions d'utilisation</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&amp;display=swap" rel="stylesheet">
-  </body>
+  <!-- Scripts -->
+  <script src="vendors/@popperjs/popper.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="vendors/fontawesome/all.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  
+  <script>
+    // Kelasi 360 knowledge base for responses
+    const kelasiKnowledge = {
+      'qu\'est-ce que kelasi 360': 'Kelasi 360 est une plateforme éducative connectée et intelligente qui améliore les conditions de suivi et de gestion de l\'éducation grâce au numérique. Elle connecte les apprenants, les enseignants et les établissements dans un écosystème innovant et inclusif.',
+      'qu\'est-ce que kelasi': 'Kelasi 360 est une plateforme éducative connectée et intelligente qui améliore les conditions de suivi et de gestion de l\'éducation grâce au numérique.',
+      'kelasi 360 c\'est quoi': 'Kelasi 360 est une plateforme éducative complète qui permet de gérer les étudiants, les enseignants, les classes, les frais scolaires et bien plus encore dans un seul système intelligent.',
+      'fonctionnalités': 'Kelasi 360 propose de nombreuses fonctionnalités puissantes : Tableau de bord en temps réel, gestion des frais scolaires, communication avec les parents, gestion des classes et des enseignants, suivi financier complet (trésorerie), et bien d\'autres !',
+      'fonctionnalite': 'Kelasi 360 propose de nombreuses fonctionnalités puissantes : Tableau de bord en temps réel, gestion des frais scolaires, communication avec les parents, gestion des classes et des enseignants, suivi financier complet (trésorerie), et bien d\'autres !',
+      'tarifs': 'Nos tarifs sont simples et transparents : Standard à partir de 70€/mois, Pro (populaire) à partir de 100€/mois avec toutes les fonctionnalités, et Entreprise à partir de 150€/mois pour les grands établissements.',
+      'tarif': 'Nos tarifs sont simples et transparents : Standard à partir de 70€/mois, Pro (populaire) à partir de 100€/mois avec toutes les fonctionnalités, et Entreprise à partir de 150€/mois pour les grands établissements.',
+      'prix': 'Nos tarifs sont simples et transparents : Standard à partir de 70€/mois, Pro (populaire) à partir de 100€/mois avec toutes les fonctionnalités, et Entreprise à partir de 150€/mois pour les grands établissements.',
+      'comment ça marche': 'C\'est très simple ! 1) Configurez votre établissement en quelques minutes, 2) Choisissez le plan qui correspond à vos besoins, 3) Commencez immédiatement à utiliser toutes les fonctionnalités pour gérer votre établissement efficacement !',
+      'tableau de bord': 'Notre tableau de bord offre un suivi en temps réel des performances de votre établissement avec des indicateurs clairs et précis. Visualisez toutes vos données importantes en un seul endroit !',
+      'frais scolaires': 'Gérez facilement tous les frais scolaires grâce à notre système complet de paiement et de suivi. Plus de paperasse, tout est numérique et organisé !',
+      'enseignants': 'Gérez vos enseignants, leurs emplois du temps et leurs évaluations directement sur la plateforme Kelasi 360. Une gestion simplifiée pour une meilleure productivité !',
+      'classes': 'Organisez vos classes, affectez les enseignants et gérez les inscriptions facilement avec Kelasi 360. Tout est centralisé pour plus d\'efficacité !',
+      'tresorerie': 'Notre module trésorerie vous offre un suivi financier complet avec des rapports détaillés et des analyses approfondies. Gardez le contrôle total sur vos finances !',
+      'développeurs': 'Pour les développeurs, Kelasi 360 propose une API accessible (notamment dans le plan Entreprise) pour intégrer notre plateforme avec vos systèmes existants.',
+      'api': 'Notre API est disponible dans le plan Entreprise et vous permet d\'intégrer Kelasi 360 avec vos propres systèmes et applications.',
+      'entreprise': 'Notre plan Entreprise est parfait pour les grands établissements : étudiants illimités, personnalisation complète, support dédié et API accessible.',
+      'support': 'Nous offrons un support de qualité : support par email pour le plan Standard, support prioritaire pour le plan Pro, et support dédié pour le plan Entreprise.',
+      'aide': 'Je suis là pour vous aider ! Posez-moi n\'importe quelle question sur Kelasi 360, ses fonctionnalités, tarifs ou comment commencer.',
+      'bonjour': 'Bonjour ! Comment puis-je vous aider aujourd\'hui avec Kelasi 360 ?',
+      'salut': 'Salut ! En quoi puis-je vous assister concernant Kelasi 360 ?',
+      'hello': 'Hello ! How can I help you with Kelasi 360 today ?',
+      'default': 'Je vous remercie pour votre question ! Kelasi 360 est une plateforme complète de gestion éducative qui connecte les apprenants, les enseignants et les établissements. Pour plus de détails, n\'hésitez pas à explorer nos sections Fonctionnalités, Tarifs ou à nous contacter directement !'
+    };
+
+    // Function to get response based on user question
+    function getKelasiResponse(question) {
+      const lowerQuestion = question.toLowerCase().trim();
+      
+      // Check for keywords in the question
+      for (let key in kelasiKnowledge) {
+        if (lowerQuestion.includes(key)) {
+          return kelasiKnowledge[key];
+        }
+      }
+      
+      return kelasiKnowledge['default'];
+    }
+
+    // Function to add message to chat
+    function addMessage(text, sender) {
+      const chatMessages = document.getElementById('chatMessages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chat-message ${sender}`;
+      
+      const avatar = document.createElement('div');
+      avatar.className = `chat-avatar ${sender}`;
+      avatar.innerHTML = sender === 'user' 
+        ? '<i class="fas fa-user"></i>' 
+        : '<i class="fas fa-robot"></i>';
+      
+      const bubble = document.createElement('div');
+      bubble.className = `chat-bubble ${sender}`;
+      bubble.textContent = text;
+      
+      if (sender === 'user') {
+        messageDiv.appendChild(bubble);
+        messageDiv.appendChild(avatar);
+      } else {
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(bubble);
+      }
+      
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Function to show typing indicator
+    function showTyping() {
+      const chatMessages = document.getElementById('chatMessages');
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'chat-message ai';
+      typingDiv.id = 'typingIndicator';
+      
+      const avatar = document.createElement('div');
+      avatar.className = 'chat-avatar ai';
+      avatar.innerHTML = '<i class="fas fa-robot"></i>';
+      
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-bubble ai';
+      bubble.innerHTML = `
+        <div class="chat-typing">
+          <div class="chat-typing-dot"></div>
+          <div class="chat-typing-dot"></div>
+          <div class="chat-typing-dot"></div>
+        </div>
+      `;
+      
+      typingDiv.appendChild(avatar);
+      typingDiv.appendChild(bubble);
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Function to remove typing indicator
+    function removeTyping() {
+      const typingIndicator = document.getElementById('typingIndicator');
+      if (typingIndicator) {
+        typingIndicator.remove();
+      }
+    }
+
+    // Function to handle sending a message
+    function sendMessage() {
+      const chatInput = document.getElementById('chatInput');
+      const message = chatInput.value.trim();
+      
+      if (!message) return;
+      
+      // Add user message
+      addMessage(message, 'user');
+      chatInput.value = '';
+      
+      // Show typing indicator and then respond
+      showTyping();
+      setTimeout(() => {
+        removeTyping();
+        const response = getKelasiResponse(message);
+        addMessage(response, 'ai');
+      }, 1000 + Math.random() * 1000); // Simulate response time
+    }
+
+    // Event listeners
+    document.getElementById('chatSend').addEventListener('click', sendMessage);
+    document.getElementById('chatInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Search icon click - scroll to chat
+    document.querySelector('.search-icon').addEventListener('click', function() {
+      document.getElementById('chatInput').focus();
+      window.scrollTo({
+        top: document.querySelector('.chat-section').offsetTop - 100,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
 
 </html>
