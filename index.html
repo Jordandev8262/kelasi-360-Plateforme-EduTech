@@ -986,6 +986,14 @@
         padding: 1.5rem;
       }
 
+      .chat-input-container {
+        padding: 0.75rem 1rem;
+      }
+      
+      .chat-input {
+        font-size: 0.78rem;
+      }
+
       .chat-bubble {
         max-width: 90%;
       }
@@ -1761,17 +1769,6 @@
           </div>
           
           <button type="submit" class="login-button">Se connecter</button>
-          
-          <div class="login-divider">Ou continuer avec</div>
-          
-          <div class="social-login">
-            <button type="button" class="social-button">
-              <i class="fab fa-google"></i> Google
-            </button>
-            <button type="button" class="social-button">
-              <i class="fab fa-microsoft"></i> Microsoft
-            </button>
-          </div>
         </form>
         
         <p class="signup-link">Pas encore de compte ? <a href="#">S'inscrire</a></p>
@@ -1793,9 +1790,9 @@
       'kelasi 360 c\'est quoi': 'Kelasi 360 est une plateforme éducative complète qui permet de gérer les étudiants, les enseignants, les classes, les frais scolaires et bien plus encore dans un seul système intelligent.',
       'fonctionnalités': 'Kelasi 360 propose de nombreuses fonctionnalités puissantes : Tableau de bord en temps réel, gestion des frais scolaires, communication avec les parents, gestion des classes et des enseignants, suivi financier complet (trésorerie), et bien d\'autres !',
       'fonctionnalite': 'Kelasi 360 propose de nombreuses fonctionnalités puissantes : Tableau de bord en temps réel, gestion des frais scolaires, communication avec les parents, gestion des classes et des enseignants, suivi financier complet (trésorerie), et bien d\'autres !',
-      'tarifs': 'Nos tarifs sont simples et transparents : Standard à partir de 70€/mois, Pro (populaire) à partir de 100€/mois avec toutes les fonctionnalités, et Entreprise à partir de 150€/mois pour les grands établissements.',
-      'tarif': 'Nos tarifs sont simples et transparents : Standard à partir de 70€/mois, Pro (populaire) à partir de 100€/mois avec toutes les fonctionnalités, et Entreprise à partir de 150€/mois pour les grands établissements.',
-      'prix': 'Nos tarifs sont simples et transparents : Standard à partir de 70€/mois, Pro (populaire) à partir de 100€/mois avec toutes les fonctionnalités, et Entreprise à partir de 150€/mois pour les grands établissements.',
+      'tarifs': 'Nos tarifs sont simples et transparents : Standard à partir de 70$/mois, Pro (populaire) à partir de 100$/mois avec toutes les fonctionnalités, et Entreprise à partir de 150$/mois pour les grands établissements.',
+      'tarif': 'Nos tarifs sont simples et transparents : Standard à partir de 70$/mois, Pro (populaire) à partir de 100$/mois avec toutes les fonctionnalités, et Entreprise à partir de 150$/mois pour les grands établissements.',
+      'prix': 'Nos tarifs sont simples et transparents : Standard à partir de 70$/mois, Pro (populaire) à partir de 100$/mois avec toutes les fonctionnalités, et Entreprise à partir de 150$/mois pour les grands établissements.',
       'comment ça marche': 'C\'est très simple ! 1) Configurez votre établissement en quelques minutes, 2) Choisissez le plan qui correspond à vos besoins, 3) Commencez immédiatement à utiliser toutes les fonctionnalités pour gérer votre établissement efficacement !',
       'tableau de bord': 'Notre tableau de bord offre un suivi en temps réel des performances de votre établissement avec des indicateurs clairs et précis. Visualisez toutes vos données importantes en un seul endroit !',
       'frais scolaires': 'Gérez facilement tous les frais scolaires grâce à notre système complet de paiement et de suivi. Plus de paperasse, tout est numérique et organisé !',
@@ -2014,10 +2011,19 @@
       }
     });
 
-    // Preloader
+    // Preloader - disable scrolling while visible
+    document.body.style.overflow = 'hidden';
+    const preloader = document.getElementById('preloader');
+    
+    // Re-enable scrolling when preloader transition ends
+    preloader.addEventListener('transitionend', function(e) {
+      if (e.target.classList.contains('hidden')) {
+        document.body.style.overflow = '';
+      }
+    });
+    
     window.addEventListener('load', function() {
       setTimeout(function() {
-        const preloader = document.getElementById('preloader');
         preloader.classList.add('hidden');
       }, 4500); // 4.5 seconds
     });
