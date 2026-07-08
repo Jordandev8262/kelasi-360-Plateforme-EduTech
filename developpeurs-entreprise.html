@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Document Title -->
-  <title>Kelasi 360</title>
+  <title>Développeurs & Entreprise - Kelasi 360</title>
 
   <!-- Favicons -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/gallery/logo.png">
@@ -199,7 +199,8 @@
       transition: color 0.2s ease;
     }
 
-    .nav-link:hover {
+    .nav-link:hover,
+    .nav-link.active {
       color: #EBEBED;
     }
 
@@ -284,160 +285,10 @@
       transition: background-color 0.2s ease, color 0.2s ease;
     }
 
-    .mobile-nav-link:hover {
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
       background-color: rgba(0, 89, 247, 0.1);
       color: #0059F7;
-    }
-
-    /* Chat Section */
-    .chat-section {
-      padding: 4rem 2rem 6rem;
-    }
-
-    .chat-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .chat-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    .chat-messages {
-      background: rgba(25, 36, 71, 0.3);
-      border: 1px solid rgba(126, 139, 182, 0.2);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      min-height: 300px;
-      max-height: 500px;
-      overflow-y: auto;
-      margin-bottom: 1.5rem;
-    }
-
-    .chat-message {
-      margin-bottom: 1.5rem;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .chat-message.user {
-      justify-content: flex-end;
-    }
-
-    .chat-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .chat-avatar.user {
-      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
-    }
-
-    .chat-avatar.ai {
-      background: linear-gradient(135deg, #10a37f 0%, #0d8b6a 100%);
-    }
-
-    .chat-bubble {
-      max-width: 80%;
-      padding: 1rem 1.5rem;
-      border-radius: 1.25rem;
-      line-height: 1.6;
-    }
-
-    .chat-bubble.user {
-      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
-      color: white;
-      border-bottom-right-radius: 0.25rem;
-    }
-
-    .chat-bubble.ai {
-      background: rgba(126, 139, 182, 0.15);
-      color: #EBEBED;
-      border-bottom-left-radius: 0.25rem;
-    }
-
-    .chat-typing {
-      display: flex;
-      gap: 0.25rem;
-    }
-
-    .chat-typing-dot {
-      width: 8px;
-      height: 8px;
-      background: #7E8BB6;
-      border-radius: 50%;
-      animation: typing 1.4s infinite ease-in-out both;
-    }
-
-    .chat-typing-dot:nth-child(1) {
-      animation-delay: -0.32s;
-    }
-
-    .chat-typing-dot:nth-child(2) {
-      animation-delay: -0.16s;
-    }
-
-    @keyframes typing {
-      0%, 80%, 100% {
-        transform: scale(0);
-        opacity: 0.5;
-      }
-      40% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .chat-input-container {
-      display: flex;
-      align-items: center;
-      background: rgba(25, 36, 71, 0.5);
-      border: 1px solid rgba(126, 139, 182, 0.3);
-      border-radius: 1rem;
-      padding: 1rem 1.5rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .chat-input-container:focus-within {
-      border-color: rgba(0, 89, 247, 0.5);
-      box-shadow: 0 0 30px rgba(0, 89, 247, 0.2);
-    }
-
-    .chat-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: #EBEBED;
-      font-size: 1.1rem;
-      outline: none;
-    }
-
-    .chat-input::placeholder {
-      color: #7E8BB6;
-    }
-
-    .chat-send-button {
-      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
-      border: none;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .chat-send-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0, 89, 247, 0.3);
     }
 
     /* Hero Section */
@@ -508,33 +359,7 @@
       color: #EBEBED;
     }
 
-    /* Dashboard Preview */
-    .dashboard-preview {
-      padding: 3rem 2rem 6rem;
-    }
-
-    .dashboard-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .dashboard-image {
-      width: 100%;
-      border-radius: 1rem;
-      border: 1px solid rgba(126, 139, 182, 0.15);
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Features Section */
-    .features {
-      padding: 6rem 2rem;
-    }
-
-    .features-container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
+    /* Section Header */
     .section-header {
       text-align: center;
       margin-bottom: 4rem;
@@ -551,13 +376,72 @@
       color: #7E8BB6;
     }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+    /* About Section */
+    .about-section {
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
     }
 
-    .feature-card {
+    .about-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #EBEBED;
+    }
+
+    .about-text p {
+      color: #7E8BB6;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-image {
+      background: linear-gradient(135deg, rgba(0, 89, 247, 0.1) 0%, rgba(0, 89, 247, 0.05) 100%);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(126, 139, 182, 0.2);
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
+    }
+
+    .values-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .value-card {
       background: rgba(25, 36, 71, 0.5);
       border: 1px solid rgba(126, 139, 182, 0.15);
       border-radius: 1rem;
@@ -565,205 +449,169 @@
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .feature-card:hover {
+    .value-card:hover {
       transform: translateY(-5px);
       border-color: rgba(0, 89, 247, 0.3);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
 
-    .feature-icon {
-      width: 48px;
-      height: 48px;
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(0, 89, 247, 0.2) 0%, rgba(0, 89, 247, 0.1) 100%);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 1.5rem;
     }
 
-    .feature-title {
+    .value-icon i {
+      font-size: 1.8rem;
+      color: #0059F7;
+    }
+
+    .value-title {
       font-size: 1.35rem;
       font-weight: 600;
       margin-bottom: 0.75rem;
     }
 
-    .feature-description {
+    .value-description {
       color: #7E8BB6;
       line-height: 1.7;
     }
 
-    /* How It Works */
-    .how-it-works {
+    /* Team Section */
+    .team-section {
       padding: 6rem 2rem;
       border-top: 1px solid rgba(126, 139, 182, 0.1);
     }
 
-    .how-it-works-container {
+    .team-container {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .step {
+    .team-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      margin-bottom: 6rem;
-    }
-
-    .step:nth-child(even) {
-      direction: rtl;
-    }
-
-    .step:nth-child(even) > * {
-      direction: ltr;
-    }
-
-    .step-content {
-      padding: 2rem 0;
-    }
-
-    .step-number {
-      color: #0059F7;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 1rem;
-    }
-
-    .step-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .step-description {
-      color: #7E8BB6;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .step-image {
-      width: 100%;
-      border-radius: 0.75rem;
-    }
-
-    /* Pricing Section */
-    .pricing {
-      padding: 6rem 2rem;
-      border-top: 1px solid rgba(126, 139, 182, 0.1);
-    }
-
-    .pricing-container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
 
-    .pricing-card {
+    .team-member {
       background: rgba(25, 36, 71, 0.5);
       border: 1px solid rgba(126, 139, 182, 0.15);
       border-radius: 1rem;
-      padding: 2.5rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 89, 247, 0.3);
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
     }
 
-    .pricing-card.featured {
-      border-color: rgba(0, 89, 247, 0.5);
-      box-shadow: 0 0 40px rgba(0, 89, 247, 0.15);
-      position: relative;
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -12px;
-      right: 2rem;
-      background: #0059F7;
+    .team-avatar i {
+      font-size: 3rem;
       color: white;
-      padding: 0.35rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.8rem;
-      font-weight: 600;
     }
 
-    .pricing-name {
-      font-size: 1.1rem;
-      color: #7E8BB6;
+    .team-name {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      color: #0059F7;
+      font-size: 1rem;
       font-weight: 500;
       margin-bottom: 1rem;
     }
 
-    .pricing-price {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .pricing-price span {
-      font-size: 1rem;
+    .team-bio {
       color: #7E8BB6;
-      font-weight: 400;
+      line-height: 1.7;
     }
 
-    .pricing-divider {
-      height: 1px;
-      background: rgba(126, 139, 182, 0.15);
-      margin: 1.5rem 0;
+    /* Developers Section */
+    .developers-section {
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
     }
 
-    .pricing-features {
-      list-style: none;
-      margin-bottom: 2rem;
-      flex-grow: 1;
+    .developers-container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .pricing-feature {
-      padding: 0.75rem 0;
+    .developers-content {
+      background: linear-gradient(135deg, rgba(0, 89, 247, 0.1) 0%, rgba(0, 89, 247, 0.05) 100%);
+      border: 1px solid rgba(0, 89, 247, 0.3);
+      border-radius: 1.5rem;
+      padding: 4rem;
+    }
+
+    .developers-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #EBEBED;
+    }
+
+    .developers-text p {
       color: #7E8BB6;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .developers-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .developer-feature {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
-    .pricing-feature i {
+    .developer-feature i {
       color: #0059F7;
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
     }
 
-    .pricing-cta {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.2s ease;
+    .developer-feature-text {
+      color: #7E8BB6;
+      line-height: 1.6;
     }
 
-    .pricing-cta.primary {
-      background: linear-gradient(135deg, #0059F7 0%, #0047c6 100%);
-      color: white;
-    }
-
-    .pricing-cta.primary:hover {
-      box-shadow: 0 10px 30px rgba(0, 89, 247, 0.3);
-      color: white;
-    }
-
-    .pricing-cta.secondary {
-      border: 1px solid rgba(126, 139, 182, 0.3);
+    .developer-feature-text strong {
       color: #EBEBED;
-    }
-
-    .pricing-cta.secondary:hover {
-      background: rgba(235, 235, 237, 0.05);
-      color: #EBEBED;
+      display: block;
+      margin-bottom: 0.3rem;
     }
 
     /* CTA Section */
     .cta-section {
       padding: 6rem 2rem;
+      border-top: 1px solid rgba(126, 139, 182, 0.1);
       text-align: center;
     }
 
@@ -880,46 +728,17 @@
         font-size: 1.1rem;
       }
 
-      .chat-section {
-        padding: 4rem 1.5rem 5rem;
-      }
-
-      .dashboard-preview {
-        padding: 2.5rem 1.5rem 5rem;
-      }
-
-      .features {
-        padding: 5rem 1.5rem;
-      }
-
-      .how-it-works {
-        padding: 5rem 1.5rem;
-      }
-
-      .step {
+      .about-content {
         grid-template-columns: 1fr;
-        gap: 1.75rem;
-        margin-bottom: 5rem;
+        gap: 2rem;
       }
 
-      .step-content {
-        padding: 1rem 0;
+      .about-content:nth-child(even) {
+        direction: rtl;
       }
 
-      .step:nth-child(even) {
+      .about-content:nth-child(even) > * {
         direction: ltr;
-      }
-
-      .pricing {
-        padding: 5rem 1.5rem;
-      }
-
-      .cta-section {
-        padding: 5rem 1.5rem;
-      }
-
-      .cta-container {
-        padding: 3rem 2rem;
       }
     }
 
@@ -974,81 +793,11 @@
         flex-direction: column;
       }
 
-      .chat-section {
-        padding: 3rem 1.25rem 4rem;
-      }
-
-      .chat-title {
-        font-size: 1.5rem;
-      }
-
-      .chat-messages {
-        padding: 1.5rem;
-      }
-
-      .chat-input-container {
-        padding: 0.75rem 1rem;
-      }
-      
-      .chat-input {
-        font-size: 0.78rem;
-      }
-
-      .chat-bubble {
-        max-width: 90%;
-      }
-
-      .dashboard-preview {
-        padding: 2rem 1.25rem 4rem;
-      }
-
-      .features {
-        padding: 4rem 1.25rem;
-      }
-
-      .feature-card {
-        padding: 1.75rem;
-      }
-
-      .feature-icon {
-        margin-bottom: 1rem;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .how-it-works {
-        padding: 4rem 1.25rem;
-      }
-
-      .step {
-        gap: 1.5rem;
-        margin-bottom: 4rem;
-      }
-
-      .step-content {
-        padding: 0;
-      }
-
-      .step-title {
-        font-size: 1.75rem;
-      }
-
-      .pricing {
-        padding: 4rem 1.25rem;
-      }
-
-      .pricing-grid {
-        gap: 1.5rem;
-      }
-
-      .cta-section {
-        padding: 4rem 1.25rem;
-      }
-
       .cta-container {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .developers-content {
         padding: 2.5rem 1.5rem;
       }
 
@@ -1150,11 +899,6 @@
       position: relative;
       z-index: 1;
       animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
     }
 
     .login-image {
@@ -1472,7 +1216,7 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="#" class="navbar-logo" id="navbarLogo">
+      <a href="index.html" class="navbar-logo" id="navbarLogo">
         <img src="assets/img/gallery/logo.png" alt="Kelasi 360" style="width: 40px; margin-right: 12px;">
         Kelasi 360
       </a>
@@ -1482,10 +1226,10 @@
         <span></span>
       </button>
       <div class="navbar-links">
-        <a href="#features" class="nav-link">Fonctionnalités</a>
-        <a href="#how-it-works" class="nav-link">Comment ça marche</a>
-        <a href="#pricing" class="nav-link">Tarifs</a>
-        <a href="developpeurs-entreprise.html" class="nav-link">Développeurs & Entreprise</a>
+        <a href="index.html#features" class="nav-link">Fonctionnalités</a>
+        <a href="index.html#how-it-works" class="nav-link">Comment ça marche</a>
+        <a href="index.html#pricing" class="nav-link">Tarifs</a>
+        <a href="developpeurs-entreprise.html" class="nav-link active">Développeurs & Entreprise</a>
         <div class="search-icon">
           <i class="fas fa-search"></i>
         </div>
@@ -1494,10 +1238,10 @@
     </div>
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#features" class="mobile-nav-link">Fonctionnalités</a>
-      <a href="#how-it-works" class="mobile-nav-link">Comment ça marche</a>
-      <a href="#pricing" class="mobile-nav-link">Tarifs</a>
-      <a href="developpeurs-entreprise.html" class="mobile-nav-link">Développeurs & Entreprise</a>
+      <a href="index.html#features" class="mobile-nav-link">Fonctionnalités</a>
+      <a href="index.html#how-it-works" class="mobile-nav-link">Comment ça marche</a>
+      <a href="index.html#pricing" class="mobile-nav-link">Tarifs</a>
+      <a href="developpeurs-entreprise.html" class="mobile-nav-link active">Développeurs & Entreprise</a>
     </div>
   </nav>
 
@@ -1505,181 +1249,229 @@
   <section class="hero">
     <div class="hero-container">
       <h1 class="hero-title">
-        Kelasi <span>360</span> :<br>
-        L'éducation connectée et intelligente
+        Développeurs & <span>Entreprise</span><br>
+        Découvrez Digicreateam
       </h1>
       <p class="hero-subtitle">
-        Kelasi 360 améliore les conditions de suivi et de gestion de l'éducation grâce au numérique, en connectant les apprenants, les enseignants et les établissements dans un écosystème intelligent, inclusif et innovant.
+        Digicreateam est l'entreprise à l'origine du développement et du lancement de Kelasi 360. Découvrez notre équipe, nos valeurs et notre engagement envers l'éducation numérique.
       </p>
       <div class="hero-cta">
-        <a href="#" class="btn-primary">Découvrir la plateforme</a>
-        <a href="#how-it-works" class="btn-secondary">En savoir plus</a>
+        <a href="#about" class="btn-primary">Notre histoire</a>
+        <a href="#developers" class="btn-secondary">Pour les développeurs</a>
       </div>
     </div>
   </section>
 
-  <!-- Chat Section -->
-  <section class="chat-section">
-    <div class="chat-container">
-      <h2 class="chat-title">Comment puis-je vous aider ?</h2>
-      <div class="chat-messages" id="chatMessages">
-        <div class="chat-message ai">
-          <div class="chat-avatar ai">
-            <i class="fas fa-robot"></i>
+  <!-- About Digicreateam Section -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="section-header">
+        <h2 class="section-title">Digicreateam</h2>
+        <p class="section-subtitle">Qui sommes-nous ?</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Notre Histoire</h3>
+          <p>
+            Digicreateam est une entreprise innovante spécialisée dans le développement de solutions numériques pour l'éducation. Fondée par une équipe passionnée par l'innovation et l'avenir de l'apprentissage, nous avons créé Kelasi 360 pour transformer la gestion des établissements éducatifs.
+          </p>
+          <p>
+            Notre mission est de rendre l'éducation plus accessible, plus efficace et plus connectée grâce à des technologies intelligentes et conviviales. Nous croyons fermement que le numérique peut révolutionner l'enseignement et l'apprentissage pour tous.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="assets/img/gallery/logo.png" alt="Digicreateam Logo" style="max-width: 300px;">
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="about-image">
+          <img src="assets/img/gallery/dashboard.png" alt="Notre Vision" style="border-radius: 1rem; width: 100%;">
+        </div>
+        <div class="about-text">
+          <h3>Notre Vision</h3>
+          <p>
+            Nous envisageons un avenir où chaque établissement éducatif dispose d'outils modernes pour gérer efficacement ses opérations, connecter tous les acteurs de l'éducation et offrir une expérience d'apprentissage exceptionnelle.
+          </p>
+          <p>
+            Kelasi 360 n'est pas seulement un outil de gestion, c'est un écosystème complet qui réunit les apprenants, les enseignants, les parents et les administrateurs dans une plateforme unique et intuitive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="values-container">
+      <div class="section-header">
+        <h2 class="section-title">Nos Valeurs</h2>
+        <p class="section-subtitle">Ce qui nous guide chaque jour</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
           </div>
-          <div class="chat-bubble ai">
-            Bonjour ! Je suis l'assistant Kelasi 360. Posez-moi n'importe quelle question sur notre plateforme éducative, ses fonctionnalités, tarifs, ou comment elle peut vous aider !
+          <h3 class="value-title">Innovation</h3>
+          <p class="value-description">Nous repoussons constamment les limites pour offrir des solutions de pointe adaptées aux besoins modernes de l'éducation.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-heart"></i>
           </div>
+          <h3 class="value-title">Passion</h3>
+          <p class="value-description">Notre équipe est animée par une véritable passion pour l'éducation et les technologies qui y contribuent.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="value-title">Collaboration</h3>
+          <p class="value-description">Nous croyons en la force du travail d'équipe et de la collaboration avec nos utilisateurs pour créer des solutions adaptées.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="value-title">Fiabilité</h3>
+          <p class="value-description">La sécurité et la fiabilité de nos solutions sont notre priorité absolue pour protéger les données de nos utilisateurs.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 class="value-title">Excellence</h3>
+          <p class="value-description">Nous nous efforçons d'excellence dans tout ce que nous faisons, du développement à l'assistance client.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3 class="value-title">Accessibilité</h3>
+          <p class="value-description">Nous rendons nos solutions accessibles à tous, quel que soit le niveau technique, pour démocratiser l'éducation numérique.</p>
         </div>
       </div>
-      <div class="chat-input-container">
-        <input type="text" class="chat-input" id="chatInput" placeholder="Posez une question sur Kelasi 360...">
-        <button class="chat-send-button" id="chatSend">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
     </div>
   </section>
 
-  <!-- Dashboard Preview -->
-  <section class="dashboard-preview">
-    <div class="dashboard-container">
-      <img src="assets/img/gallery/dashboard.png" alt="Tableau de bord Kelasi 360" class="dashboard-image">
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features" id="features">
-    <div class="features-container">
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="team-container">
       <div class="section-header">
-        <h2 class="section-title">Fonctionnalités puissantes</h2>
-        <p class="section-subtitle">Tout ce dont vous avez besoin pour gérer votre établissement</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <img src="assets/img/gallery/dashboardicon.png" alt="Tableau de bord" class="feature-icon">
-          <h3 class="feature-title">Tableau de bord</h3>
-          <p class="feature-description">Suivi en temps réel des performances de votre établissement avec des indicateurs clairs et précis.</p>
-        </div>
-        <div class="feature-card">
-          <img src="assets/img/gallery/comment.png" alt="Frais scolaire" class="feature-icon">
-          <h3 class="feature-title">Gestion des frais</h3>
-          <p class="feature-description">Simplifiez la gestion financière avec un système de paiement et de suivi complet.</p>
-        </div>
-        <div class="feature-card">
-          <img src="assets/img/gallery/trilored.png" alt="Communiqués" class="feature-icon">
-          <h3 class="feature-title">Communiqués</h3>
-          <p class="feature-description">Communiquez efficacement avec les parents, les enseignants et les étudiants.</p>
-        </div>
-        <div class="feature-card">
-          <img src="assets/img/gallery/statistics.png" alt="Classes" class="feature-icon">
-          <h3 class="feature-title">Gestion des classes</h3>
-          <p class="feature-description">Organisez vos classes, affectez les enseignants et gérez les inscriptions facilement.</p>
-        </div>
-        <div class="feature-card">
-          <img src="assets/img/gallery/profile.png" alt="Professeurs" class="feature-icon">
-          <h3 class="feature-title">Professeurs</h3>
-          <p class="feature-description">Gérez les professeurs, leurs emplois du temps et leurs évaluations.</p>
-        </div>
-        <div class="feature-card">
-          <img src="assets/img/gallery/folder.png" alt="Trésorerie" class="feature-icon">
-          <h3 class="feature-title">Trésorerie</h3>
-          <p class="feature-description">Suivi complet des finances avec rapports détaillés et analyses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="how-it-works-container">
-      <div class="section-header">
-        <h2 class="section-title">Comment ça marche ?</h2>
-        <p class="section-subtitle">Trois étapes simples pour transformer votre établissement</p>
+        <h2 class="section-title">Notre Équipe</h2>
+        <p class="section-subtitle">Les esprits créatifs derrière Kelasi 360</p>
       </div>
 
-      <div class="step">
-        <div class="step-content">
-          <div class="step-number">Étape 1</div>
-          <h3 class="step-title">Pour l'administrateur</h3>
-          <p class="step-description">Configurez votre établissement en quelques minutes. Ajoutez vos classes, vos professeurs et vos étudiants facilement.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-avatar">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="team-name">Fondateur & CEO</h3>
+          <p class="team-role">Visionnaire & Stratégie</p>
+          <p class="team-bio">Passionné par l'innovation en éducation, il guide l'entreprise avec sa vision stratégique et son engagement envers l'excellence.</p>
         </div>
-        <div class="step-image-container">
-          <img src="assets/img/gallery/comment1.png" alt="Administrateur" class="step-image">
-        </div>
-      </div>
 
-      <div class="step">
-        <div class="step-content">
-          <div class="step-number">Étape 2</div>
-          <h3 class="step-title">Abonnement et accès</h3>
-          <p class="step-description">Choisissez le plan qui correspond à vos besoins et donnez accès à toute votre équipe.</p>
+        <div class="team-member">
+          <div class="team-avatar">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="team-name">Directeur Technique</h3>
+          <p class="team-role">Architecture & Développement</p>
+          <p class="team-bio">Expert en technologies modernes, il conçoit et supervise l'architecture technique de Kelasi 360 avec précision.</p>
         </div>
-        <div class="step-image-container">
-          <img src="assets/img/gallery/comment2.png" alt="Abonnement" class="step-image">
-        </div>
-      </div>
 
-      <div class="step">
-        <div class="step-content">
-          <div class="step-number">Étape 3</div>
-          <h3 class="step-title">Commencez à utiliser</h3>
-          <p class="step-description">Profitez de toutes les fonctionnalités pour gérer votre établissement efficacement au quotidien.</p>
+        <div class="team-member">
+          <div class="team-avatar">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3 class="team-name">Designer UX/UI</h3>
+          <p class="team-role">Expérience Utilisateur</p>
+          <p class="team-bio">Crée des interfaces intuitives et attrayantes pour rendre l'expérience utilisateur aussi agréable que possible.</p>
         </div>
-        <div class="step-image-container">
-          <img src="assets/img/gallery/comment3.png" alt="Utilisation" class="step-image">
+
+        <div class="team-member">
+          <div class="team-avatar">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="team-name">Support Client</h3>
+          <p class="team-role">Assistance & Accompagnement</p>
+          <p class="team-bio">Liaison entre Digicreateam et nos utilisateurs, offrant un support de qualité et des solutions adaptées.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
-    <div class="pricing-container">
+  <!-- Developers Section -->
+  <section class="developers-section" id="developers">
+    <div class="developers-container">
       <div class="section-header">
-        <h2 class="section-title">Tarification simple et transparente</h2>
-        <p class="section-subtitle">Choisissez le plan adapté à votre établissement</p>
+        <h2 class="section-title">Pour les Développeurs</h2>
+        <p class="section-subtitle">Intégrez Kelasi 360 dans vos systèmes</p>
       </div>
 
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3 class="pricing-name">Standard</h3>
-          <div class="pricing-price">$70<span>/mois</span></div>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Jusqu'à 500 étudiants</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Gestion des classes</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Support par email</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Rapports de base</li>
-          </ul>
-          <a href="#" class="pricing-cta secondary">Commencer</a>
+      <div class="developers-content">
+        <div class="developers-text">
+          <h3>API & Intégrations</h3>
+          <p>
+            Kelasi 360 propose une API complète pour les développeurs qui souhaitent intégrer notre plateforme avec leurs systèmes existants. Notre API RESTful est bien documentée et permet une intégration fluide avec vos applications.
+          </p>
+          <p>
+            Que vous souhaitiez synchroniser des données, automatiser des processus ou créer des intégrations personnalisées, notre équipe de développeurs est là pour vous accompagner.
+          </p>
         </div>
 
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Populaire</div>
-          <h3 class="pricing-name">Pro</h3>
-          <div class="pricing-price">$100<span>/mois</span></div>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Jusqu'à 1500 étudiants</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Toutes les fonctionnalités</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Support prioritaire</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Rapports avancés</li>
-          </ul>
-          <a href="#" class="pricing-cta primary">Commencer</a>
-        </div>
-
-        <div class="pricing-card">
-          <h3 class="pricing-name">Entreprise</h3>
-          <div class="pricing-price">$150<span>/mois</span></div>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Étudiants illimités</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Personnalisation complète</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> Support dédié</li>
-            <li class="pricing-feature"><i class="fas fa-check-circle"></i> API accessible</li>
-          </ul>
-          <a href="#" class="pricing-cta secondary">Nous contacter</a>
+        <div class="developers-features">
+          <div class="developer-feature">
+            <i class="fas fa-check-circle"></i>
+            <div class="developer-feature-text">
+              <strong>API RESTful</strong>
+              Accès complet à toutes les fonctionnalités de Kelasi 360 via notre API bien documentée.
+            </div>
+          </div>
+          <div class="developer-feature">
+            <i class="fas fa-check-circle"></i>
+            <div class="developer-feature-text">
+              <strong>Authentification sécurisée</strong>
+              Protégée par OAuth 2.0 pour une intégration sécurisée et fiable.
+            </div>
+          </div>
+          <div class="developer-feature">
+            <i class="fas fa-check-circle"></i>
+            <div class="developer-feature-text">
+              <strong>Webhooks</strong>
+              Recevez des notifications en temps réel pour les événements importants.
+            </div>
+          </div>
+          <div class="developer-feature">
+            <i class="fas fa-check-circle"></i>
+            <div class="developer-feature-text">
+              <strong>Documentation complète</strong>
+              Guides détaillés, exemples de code et SDK pour accélérer votre développement.
+            </div>
+          </div>
+          <div class="developer-feature">
+            <i class="fas fa-check-circle"></i>
+            <div class="developer-feature-text">
+              <strong>Support technique dédié</strong>
+              Notre équipe est disponible pour vous aider avec vos intégrations.
+            </div>
+          </div>
+          <div class="developer-feature">
+            <i class="fas fa-check-circle"></i>
+            <div class="developer-feature-text">
+              <strong>Environnements sandbox</strong>
+              Testez vos intégrations dans un environnement sécurisé avant la production.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1689,8 +1481,8 @@
   <section class="cta-section">
     <div class="cta-container">
       <h2 class="cta-title">Prêt à commencer ?</h2>
-      <p class="cta-subtitle">Rejoignez des centaines d'établissements qui utilisent déjà Kelasi 360</p>
-      <a href="#" class="btn-primary">Essayer gratuitement</a>
+      <p class="cta-subtitle">Rejoignez-nous et découvrez comment Kelasi 360 peut transformer votre établissement</p>
+      <a href="index.html" class="btn-primary">Retour à l'accueil</a>
     </div>
   </section>
 
@@ -1707,7 +1499,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Kelasi 360. Tous droits réservés.</p>
+        <p>&copy; 2025 Kelasi 360 by Digicreateam. Tous droits réservés.</p>
         <div class="footer-links">
           <a href="#">Conditions d'utilisation</a>
           <a href="#">Politique de confidentialité</a>
@@ -1781,147 +1573,6 @@
   <script src="assets/js/theme.js"></script>
   
   <script>
-    // Kelasi 360 knowledge base for responses
-    const kelasiKnowledge = {
-      'qu\'est-ce que kelasi 360': 'Kelasi 360 est une plateforme éducative connectée et intelligente qui améliore les conditions de suivi et de gestion de l\'éducation grâce au numérique. Elle connecte les apprenants, les enseignants et les établissements dans un écosystème innovant et inclusif.',
-      'qu\'est-ce que kelasi': 'Kelasi 360 est une plateforme éducative connectée et intelligente qui améliore les conditions de suivi et de gestion de l\'éducation grâce au numérique.',
-      'kelasi 360 c\'est quoi': 'Kelasi 360 est une plateforme éducative complète qui permet de gérer les étudiants, les enseignants, les classes, les frais scolaires et bien plus encore dans un seul système intelligent.',
-      'fonctionnalités': 'Kelasi 360 propose de nombreuses fonctionnalités puissantes : Tableau de bord en temps réel, gestion des frais scolaires, communication avec les parents, gestion des classes et des enseignants, suivi financier complet (trésorerie), et bien d\'autres !',
-      'fonctionnalite': 'Kelasi 360 propose de nombreuses fonctionnalités puissantes : Tableau de bord en temps réel, gestion des frais scolaires, communication avec les parents, gestion des classes et des enseignants, suivi financier complet (trésorerie), et bien d\'autres !',
-      'tarifs': 'Nos tarifs sont simples et transparents : Standard à partir de 70$/mois, Pro (populaire) à partir de 100$/mois avec toutes les fonctionnalités, et Entreprise à partir de 150$/mois pour les grands établissements.',
-      'tarif': 'Nos tarifs sont simples et transparents : Standard à partir de 70$/mois, Pro (populaire) à partir de 100$/mois avec toutes les fonctionnalités, et Entreprise à partir de 150$/mois pour les grands établissements.',
-      'prix': 'Nos tarifs sont simples et transparents : Standard à partir de 70$/mois, Pro (populaire) à partir de 100$/mois avec toutes les fonctionnalités, et Entreprise à partir de 150$/mois pour les grands établissements.',
-      'comment ça marche': 'C\'est très simple ! 1) Configurez votre établissement en quelques minutes, 2) Choisissez le plan qui correspond à vos besoins, 3) Commencez immédiatement à utiliser toutes les fonctionnalités pour gérer votre établissement efficacement !',
-      'tableau de bord': 'Notre tableau de bord offre un suivi en temps réel des performances de votre établissement avec des indicateurs clairs et précis. Visualisez toutes vos données importantes en un seul endroit !',
-      'frais scolaires': 'Gérez facilement tous les frais scolaires grâce à notre système complet de paiement et de suivi. Plus de paperasse, tout est numérique et organisé !',
-      'enseignants': 'Gérez vos enseignants, leurs emplois du temps et leurs évaluations directement sur la plateforme Kelasi 360. Une gestion simplifiée pour une meilleure productivité !',
-      'classes': 'Organisez vos classes, affectez les enseignants et gérez les inscriptions facilement avec Kelasi 360. Tout est centralisé pour plus d\'efficacité !',
-      'tresorerie': 'Notre module trésorerie vous offre un suivi financier complet avec des rapports détaillés et des analyses approfondies. Gardez le contrôle total sur vos finances !',
-      'développeurs': 'Pour les développeurs, Kelasi 360 propose une API accessible (notamment dans le plan Entreprise) pour intégrer notre plateforme avec vos systèmes existants.',
-      'api': 'Notre API est disponible dans le plan Entreprise et vous permet d\'intégrer Kelasi 360 avec vos propres systèmes et applications.',
-      'entreprise': 'Notre plan Entreprise est parfait pour les grands établissements : étudiants illimités, personnalisation complète, support dédié et API accessible.',
-      'support': 'Nous offrons un support de qualité : support par email pour le plan Standard, support prioritaire pour le plan Pro, et support dédié pour le plan Entreprise.',
-      'aide': 'Je suis là pour vous aider ! Posez-moi n\'importe quelle question sur Kelasi 360, ses fonctionnalités, tarifs ou comment commencer.',
-      'bonjour': 'Bonjour ! Comment puis-je vous aider aujourd\'hui avec Kelasi 360 ?',
-      'salut': 'Salut ! En quoi puis-je vous assister concernant Kelasi 360 ?',
-      'hello': 'Hello ! How can I help you with Kelasi 360 today ?',
-      'default': 'Je vous remercie pour votre question ! Kelasi 360 est une plateforme complète de gestion éducative qui connecte les apprenants, les enseignants et les établissements. Pour plus de détails, n\'hésitez pas à explorer nos sections Fonctionnalités, Tarifs ou à nous contacter directement !'
-    };
-
-    // Function to get response based on user question
-    function getKelasiResponse(question) {
-      const lowerQuestion = question.toLowerCase().trim();
-      
-      // Check for keywords in the question
-      for (let key in kelasiKnowledge) {
-        if (lowerQuestion.includes(key)) {
-          return kelasiKnowledge[key];
-        }
-      }
-      
-      return kelasiKnowledge['default'];
-    }
-
-    // Function to add message to chat
-    function addMessage(text, sender) {
-      const chatMessages = document.getElementById('chatMessages');
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `chat-message ${sender}`;
-      
-      const avatar = document.createElement('div');
-      avatar.className = `chat-avatar ${sender}`;
-      avatar.innerHTML = sender === 'user' 
-        ? '<i class="fas fa-user"></i>' 
-        : '<i class="fas fa-robot"></i>';
-      
-      const bubble = document.createElement('div');
-      bubble.className = `chat-bubble ${sender}`;
-      bubble.textContent = text;
-      
-      if (sender === 'user') {
-        messageDiv.appendChild(bubble);
-        messageDiv.appendChild(avatar);
-      } else {
-        messageDiv.appendChild(avatar);
-        messageDiv.appendChild(bubble);
-      }
-      
-      chatMessages.appendChild(messageDiv);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    // Function to show typing indicator
-    function showTyping() {
-      const chatMessages = document.getElementById('chatMessages');
-      const typingDiv = document.createElement('div');
-      typingDiv.className = 'chat-message ai';
-      typingDiv.id = 'typingIndicator';
-      
-      const avatar = document.createElement('div');
-      avatar.className = 'chat-avatar ai';
-      avatar.innerHTML = '<i class="fas fa-robot"></i>';
-      
-      const bubble = document.createElement('div');
-      bubble.className = 'chat-bubble ai';
-      bubble.innerHTML = `
-        <div class="chat-typing">
-          <div class="chat-typing-dot"></div>
-          <div class="chat-typing-dot"></div>
-          <div class="chat-typing-dot"></div>
-        </div>
-      `;
-      
-      typingDiv.appendChild(avatar);
-      typingDiv.appendChild(bubble);
-      chatMessages.appendChild(typingDiv);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    // Function to remove typing indicator
-    function removeTyping() {
-      const typingIndicator = document.getElementById('typingIndicator');
-      if (typingIndicator) {
-        typingIndicator.remove();
-      }
-    }
-
-    // Function to handle sending a message
-    function sendMessage() {
-      const chatInput = document.getElementById('chatInput');
-      const message = chatInput.value.trim();
-      
-      if (!message) return;
-      
-      // Add user message
-      addMessage(message, 'user');
-      chatInput.value = '';
-      
-      // Show typing indicator and then respond
-      showTyping();
-      setTimeout(() => {
-        removeTyping();
-        const response = getKelasiResponse(message);
-        addMessage(response, 'ai');
-      }, 1000 + Math.random() * 1000); // Simulate response time
-    }
-
-    // Event listeners
-    document.getElementById('chatSend').addEventListener('click', sendMessage);
-    document.getElementById('chatInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        sendMessage();
-      }
-    });
-
-    // Search icon click - scroll to chat
-    document.querySelector('.search-icon').addEventListener('click', function() {
-      document.getElementById('chatInput').focus();
-      window.scrollTo({
-        top: document.querySelector('.chat-section').offsetTop - 100,
-        behavior: 'smooth'
-      });
-    });
-
     // Login Modal Functionality
     const loginModal = document.getElementById('loginModal');
     const loginButton = document.querySelector('.btn-connect');
